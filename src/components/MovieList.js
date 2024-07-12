@@ -1,5 +1,3 @@
-// src/components/MovieList.js
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
@@ -13,7 +11,7 @@ const MovieList = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await axios.get('https://movie-reviewer-backend.onrender.com/movies/');
+        const response = await axios.get('http://localhost:9000/movies/');
         setMovies(response.data);
       } catch (error) {
         console.error('Error fetching movies:', error);
@@ -26,8 +24,9 @@ const MovieList = () => {
     setSearchTerm(e.target.value);
   };
 
+  // Filter movies based on the search term
   const filteredMovies = movies.filter((movie) =>
-    movie.name.toLowerCase().includes(searchTerm.toLowerCase())
+    movie.name && movie.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -52,6 +51,7 @@ const MovieList = () => {
               <div className="card-body">
                 <h5 className="card-title">{movie.name}</h5>
                 <p className="card-text">
+                  <strong>Genre: </strong>{movie.genres}<br/>
                   <strong>Year: </strong>{movie.release_year}<br/>
                   {/* <strong>Average Rating: </strong>{movie.average_rating}<br/> */}
                 </p>
