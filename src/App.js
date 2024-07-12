@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
 
-function App() {
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle.js'
+import React from 'react';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import MovieDetails from './components/MovieDetails.js';
+import './App.css';
+import MovieList from './components/MovieList.js';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+      <div className="App">
+        <HashRouter>
+          <Routes>
+          <Route path="/"  element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/movies/:id" element={<MovieList />} />
+          <Route path="/movies/:id/:movie_id" element={<MovieDetails />} />          </Routes>
+         
+        </HashRouter>
+      </div>
+    
   );
-}
+};
 
 export default App;
