@@ -52,7 +52,6 @@ const MovieList = () => {
               <div className="card-body">
                 <h5 className="card-title">{movie.name}</h5>
                 <p className="card-text">
-                  <strong>Genre: </strong>{movie.genres}<br/>
                   <strong>Year: </strong>{movie.release_year}<br/>
                   <strong>Average Rating: </strong>{movie.average_rating}<br/>
                 </p>
