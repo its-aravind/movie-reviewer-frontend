@@ -7,7 +7,8 @@ import MovieNav from './MovieNav';
 
 const MovieList = () => {
   const [movies, setMovies] = useState([]);
-  const {id}=useParams();
+  const [searchTerm, setSearchTerm] = useState('');
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -21,13 +22,31 @@ const MovieList = () => {
     fetchMovies();
   }, []);
 
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const filteredMovies = movies.filter((movie) =>
+    movie.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="container">
-        <MovieNav />
+      <MovieNav />
       <h2>Movies</h2>
+      <div className="row mb-3">
+        <div className="col-md-12">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Search by name"
+            value={searchTerm}
+            onChange={handleSearchChange}
+          />
+        </div>
+      </div>
       <div className="row">
-        {movies.map((movie, index) => (
+        {filteredMovies.map((movie, index) => (
           <div key={index} className="col-lg-4 pb-1">
             <div className="card">
               <div className="card-body">
@@ -35,11 +54,11 @@ const MovieList = () => {
                 <p className="card-text">
                   <strong>Genre: </strong>{movie.genres}<br/>
                   <strong>Year: </strong>{movie.release_year}<br/>
-                  
+                  <strong>Average Rating: </strong>{movie.average_rating}<br/>
                 </p>
                 <div className="row">
                   <Link
-                    to={"/movies/"+id+"/"+movie._id}
+                    to={`/movies/${id}/${movie._id}`}
                     className="btn btn-primary col-lg-5 mx-1 mb-1"
                   >
                     View Reviews
