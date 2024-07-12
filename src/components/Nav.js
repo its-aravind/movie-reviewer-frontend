@@ -4,7 +4,7 @@ import '../App.css'
 export default function Nav(){
     return(
         <nav class='navbar navbar-expand-md'>
-            <Link to='/' class='navbar-brand mx-3' style={{fontWeight:'500', fontSize:'2rem', fontFamily:'Roboto Slab, serif', color:'wheat'}}>Movie Reviewer</Link>
+            <Link to='/' class='navbar-brand mx-3' style={{fontWeight:'500', fontSize:'2rem', fontFamily:'Roboto Slab, serif', color:'wheat'}}>Film Critiques</Link>
             <button class='navbar-toggler' data-bs-toggle='collapse' data-bs-target='#mynav'>
                 <span class='navbar-toggler-icon'></span>
             </button>
