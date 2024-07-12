@@ -53,7 +53,7 @@ const MovieList = () => {
                 <h5 className="card-title">{movie.name}</h5>
                 <p className="card-text">
                   <strong>Year: </strong>{movie.release_year}<br/>
-                  <strong>Average Rating: </strong>{movie.average_rating}<br/>
+                  // <strong>Average Rating: </strong>{movie.average_rating}<br/>
                 </p>
                 <div className="row">
                   <Link
