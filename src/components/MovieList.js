@@ -53,7 +53,7 @@ const MovieList = () => {
                 <div 
                   className="card-img-top" 
                   style={{ 
-                    height: "400px", 
+                    height: "450px", 
                     backgroundImage: `url(${movie.image})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center'
