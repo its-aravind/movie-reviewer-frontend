@@ -21,7 +21,7 @@ const Login = () => {
     <div>
       <div className='login-form mx-auto mt-5 ' style={{width:'400px', backgroundColor:'white', borderRadius:'20px'}}>
       <form onSubmit={handleSubmit} className=' pt-5 pb-3 px-3'>
-        <label className='form-label '>Email</label>
+        <label className='form-label '>Username</label>
         <input
           type="username"
           className='form-control mb-4' 
