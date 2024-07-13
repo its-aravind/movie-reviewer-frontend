@@ -11,7 +11,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://movie-reviewer-backend-1.onrender.com/auth/login', { username, password });
+      const response = await axios.post('https://movie-reviewer-backend-2.onrender.com/auth/login', { username, password });
       navigate('/movies/'+response.data._id);
     } catch (err) {
     }
