@@ -49,7 +49,7 @@ const MovieList = () => {
           <div key={index} className="col-lg-4 pb-1">
             <div className="card">
               <div className="card-body">
-                <h5 className="card-title">{movie.name}</h5>
+                <h5 className="card-title" style={{color:"white"}}>{movie.name}</h5>
                 <div 
                   className="card-img-top" 
                   style={{ 
@@ -59,15 +59,14 @@ const MovieList = () => {
                     backgroundPosition: 'center'
                   }} 
                 />
-                <p className="card-text">
-                  <strong>Genre: </strong>{movie.genres}<br/>
+                <p className="card-text" style={{color:'white'}}>
                   <strong>Year: </strong>{movie.release_year}<br/>
                   {/* <strong>Average Rating: </strong>{movie.average_rating}<br/> */}
                 </p>
                 <div className="row">
                   <Link
                     to={`/movies/${id}/${movie._id}`}
-                    className="btn btn-primary col-lg-5 mx-1 mb-1"
+                    className="btn btn-primary col-lg-5 mx-auto mb-1"
                   >
                     View Reviews
                   </Link>
@@ -75,7 +74,7 @@ const MovieList = () => {
                     href={`https://www.imdb.com/`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-primary col-lg-5 mx-1 mb-1"
+                    className="btn btn-primary col-lg-5 mx-auto mb-1"
                   >
                     IMDb
                   </a>
