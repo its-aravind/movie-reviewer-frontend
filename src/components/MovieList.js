@@ -11,7 +11,7 @@ const MovieList = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await axios.get('https://movie-reviewer-backend.onrender.com/movies/');
+        const response = await axios.get("http://localhost:9000/movies/");
         setMovies(response.data);
       } catch (error) {
         console.error('Error fetching movies:', error);
@@ -50,6 +50,15 @@ const MovieList = () => {
             <div className="card">
               <div className="card-body">
                 <h5 className="card-title">{movie.name}</h5>
+                <div 
+                  className="card-img-top" 
+                  style={{ 
+                    height: "400px", 
+                    backgroundImage: `url(${movie.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }} 
+                />
                 <p className="card-text">
                   <strong>Genre: </strong>{movie.genres}<br/>
                   <strong>Year: </strong>{movie.release_year}<br/>
