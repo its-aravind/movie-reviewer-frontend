@@ -13,7 +13,7 @@ const MovieDetails = () => {
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const response = await axios.get(`https://movie-reviewer-backend-1.onrender.com/movies/${movie_id}`);
+        const response = await axios.get(`https://movie-reviewer-backend-2.onrender.com/movies/${movie_id}`);
         setMovie(response.data);
       } catch (error) {
         console.error('Error fetching movie:', error);
