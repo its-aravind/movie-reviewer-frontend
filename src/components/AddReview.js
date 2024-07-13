@@ -13,7 +13,7 @@ const AddReview = ({ movieId, userId }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`https://movie-reviewer-backend-1.onrender.com/movies/${userId}/${movieId}/reviews`, { rating, comment });
+      await axios.post(`https://movie-reviewer-backend-2.onrender.com/movies/${userId}/${movieId}/reviews`, { rating, comment });
       setMessage('Review added successfully!');
       window.location.reload();
       setRating(0);
