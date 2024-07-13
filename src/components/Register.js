@@ -12,7 +12,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://movie-reviewer-backend.onrender.com/auth/register', { username, password });
+      await axios.post('https://movie-reviewer-backend-1.onrender.com/auth/register', { username, password });
       alert("User Registered successfully")
       navigate('/login');
     } catch (err) {
