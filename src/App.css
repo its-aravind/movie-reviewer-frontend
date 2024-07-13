@@ -31,3 +31,27 @@ li {
 nav{
   background-color: #16274a;
 }
+
+/* src/components/AddReview.css */
+.star-rating {
+  display: flex;
+  direction: row-reverse;
+  font-size: 2rem;
+  justify-content: center;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  color: #e4e5e9;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #ffc107;
+}
