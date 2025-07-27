@@ -49,9 +49,8 @@ const MovieList = () => {
         {filteredMovies.map((movie, index) => (
           <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3">
             <div
-              className="card h-150 border-0 shadow-sm rounded-4"
+              className="card h-100 border-0 shadow-sm rounded-4"
               style={{
-                minHeight: '520px',
                 backgroundColor: '#1e1e2f',
                 transition: 'transform 0.2s',
               }}
@@ -61,7 +60,7 @@ const MovieList = () => {
               <div
                 className="rounded-top"
                 style={{
-                  height: '300px',
+                  height: '500px',
                   backgroundImage: `url(${movie.image})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
