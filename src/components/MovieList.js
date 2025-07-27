@@ -29,7 +29,7 @@ const MovieList = () => {
   );
 
   return (
-    <div className="container">
+    <div className="container-fluix px-4">
       <MovieNav />
       <h2 className="text-center my-4 text-dark">🎬 Explore Movies</h2>
 
