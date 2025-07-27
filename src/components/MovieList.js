@@ -24,7 +24,6 @@ const MovieList = () => {
     setSearchTerm(e.target.value);
   };
 
-  // Filter movies based on the search term
   const filteredMovies = movies.filter((movie) =>
     movie.name && movie.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -32,49 +31,60 @@ const MovieList = () => {
   return (
     <div className="container">
       <MovieNav />
-      <h2>Movies</h2>
-      <div className="row mb-3">
-        <div className="col-md-12">
+      <h2 className="text-center my-4 text-light">🎬 Explore Movies</h2>
+
+      <div className="row mb-4">
+        <div className="col-md-8 offset-md-2">
           <input
             type="text"
-            className="form-control"
-            placeholder="Search by name"
+            className="form-control form-control-lg rounded-pill shadow-sm"
+            placeholder="🔍 Search by movie name..."
             value={searchTerm}
             onChange={handleSearchChange}
           />
         </div>
       </div>
-      <div className="row">
+
+      <div className="row g-4">
         {filteredMovies.map((movie, index) => (
-          <div key={index} className="col-lg-4 pb-1">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title" style={{color:"white"}}>{movie.name}</h5>
-                <div 
-                  className="card-img-top" 
-                  style={{ 
-                    height: "450px", 
-                    backgroundImage: `url(${movie.image})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center'
-                  }} 
-                />
-                <p className="card-text" style={{color:'white'}}>
-                  <strong>Year: </strong>{movie.release_year}<br/>
-                  {/* <strong>Average Rating: </strong>{movie.average_rating}<br/> */}
+          <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div
+              className="card h-100 border-0 shadow-sm rounded-4"
+              style={{
+                backgroundColor: '#1e1e2f',
+                transition: 'transform 0.2s',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.02)')}
+              onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+            >
+              <div
+                className="rounded-top"
+                style={{
+                  height: '300px',
+                  backgroundImage: `url(${movie.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  borderTopLeftRadius: '1rem',
+                  borderTopRightRadius: '1rem',
+                }}
+              />
+              <div className="card-body text-white d-flex flex-column">
+                <h5 className="card-title text-center">{movie.name}</h5>
+                <p className="card-text text-center mb-3">
+                  <strong>Year:</strong> {movie.release_year}
                 </p>
-                <div className="row">
+                <div className="mt-auto d-flex justify-content-around">
                   <Link
                     to={`/movies/${id}/${movie._id}`}
-                    className="btn btn-primary col-lg-5 mx-auto mb-1"
+                    className="btn btn-outline-light btn-sm"
                   >
                     View Reviews
                   </Link>
                   <a
-                    href={`https://www.imdb.com/`}
+                    href="https://www.imdb.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-primary col-lg-5 mx-auto mb-1"
+                    className="btn btn-outline-warning btn-sm"
                   >
                     IMDb
                   </a>
