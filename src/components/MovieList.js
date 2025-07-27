@@ -51,6 +51,7 @@ const MovieList = () => {
             <div
               className="card h-150 border-0 shadow-sm rounded-4"
               style={{
+                minHeight: '520px',
                 backgroundColor: '#1e1e2f',
                 transition: 'transform 0.2s',
               }}
