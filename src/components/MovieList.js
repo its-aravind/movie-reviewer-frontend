@@ -31,7 +31,7 @@ const MovieList = () => {
   return (
     <div className="container">
       <MovieNav />
-      <h2 className="text-center my-4 text-light">🎬 Explore Movies</h2>
+      <h2 className="text-center my-4 text-dark">🎬 Explore Movies</h2>
 
       <div className="row mb-4">
         <div className="col-md-8 offset-md-2">
